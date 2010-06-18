@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <%= csrf_meta_tag %>
+  <title>SuperDevs</title>
+  <%= stylesheet_link_tag "main" %>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <h1 class="logo">SuperDevs</h1>
+  <p class="txt_right">Logged in as <strong>David Santoro</strong>  <span class="v_line"> | </span> <a href="#"> Logout</a></p>
+
+  <!-- Navigation -->
+
+  <div id="navigation">
+    <ul>
+      <li><a href="#">HOME</a></li>
+      <li><a href="#" class="active">PEOPLE</a></li>
+    </ul>
+
+    <div id="searchform">
+      <form method="get" action="">
+        <input type="text" value="find something good..." class="search_box" name="search" onclick="this.value='';"  />
+        <input type="submit" class="search_btn" value="SEARCH" />
+      </form>
+    </div>
+
+  </div>
+
+  <div class="clear"></div>
+
+
+  <div class="content">
+    <%= yield %>
+  </div>
+
+
+  <p class="footer"><a href="#">ADVANCED  SEARCH</a> <span class="v_line"> |</span> <a href="#">LOGOUT</a></p>
+
+
+</div>
+</body>
+</html>
+

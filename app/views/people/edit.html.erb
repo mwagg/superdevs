@@ -1,0 +1,88 @@
+<!-- Intro -->
+
+<div class="in">
+  <h2>Edit your public profile</h2>
+</div>
+
+<div class="line"></div>
+
+<!-- Personal Information -->
+<div class="in forms">
+  <% form_for(@person) do |f| %>
+    <h3 class="highlighter">Personal information</h3>
+
+    <p>
+      <label for="full_name">YOUR NAME (e.g. Martin Fowler)<br/>
+        <% f.text_field :full_name, :class => 'box' %>
+      </label>
+    </p>
+
+    <p>
+      <label for="tagline">YOUR TAGLINE (e.g. Web evangelist)<br/>
+        <input type="text" name="tagline" class="box"/>
+      </label>
+    </p>
+
+    <p>
+      <label for="bio">ABOUT YOU (Few words on your career, interests and passions)<br/>
+        <textarea name="bio" rows="5" cols="30" class="box"></textarea>
+      </label>
+    </p>
+
+    <p>
+      <label for="location">LOCATION (e.g. London, UK)<br/>
+        <input type="text" name="location" class="box"/>
+      </label>
+    </p>
+
+    <h3 class="highlighter">Work and Interests</h3>
+
+    <p>
+      <label for="company">CURRENT COMPANY (e.g. ThoughtWorks)<br/>
+        <input type="text" name="company" class="box"/>
+      </label>
+    </p>
+
+    <p>
+      <label for="job_title">JOB TITLE (e.g. Ruby Developer)<br/>
+        <input type="text" name="job_title" class="box"/>
+      </label>
+    </p>
+
+    <p>
+      <label for="interests">INTERESTS (e.g. C#, Ruby, TDD, Agile)<br/>
+        <input type="text" name="interests" class="box"/>
+      </label>
+    </p>
+
+    <h3 class="highlighter">Online presence</h3>
+
+    <p>
+      <label for="website">YOUR WEBSITE (e.g. http://www.martinfowler.com)<br/>
+        <input type="text" name="website" class="box"/>
+      </label>
+    </p>
+
+    <p>
+      <label for="twitter_username">TWITTER ACCOUNT (e.g. soulnafein)<br/>
+        <input type="text" name="twitter_username" class="box"/>
+      </label>
+    </p>
+
+    <p>
+      <label for="linkedin_account">LINKEDIN ACCOUNT (e.g. soulnafein@superdevs.com)<br/>
+        <input type="text" name="linkedin_account" class="box"/>
+      </label>
+    </p>
+
+    <p>
+      <label for="github_account">GITHUB ACCOUNT (e.g. soulnafein)<br/>
+        <input type="text" name="github_account" class="box"/>
+      </label>
+    </p>
+
+    <p>
+      <input name="submit" type="submit" id="submit" tabindex="5" class="com_btn" value="UPDATE"/>
+    </p>
+  <% end %>
+</div>
