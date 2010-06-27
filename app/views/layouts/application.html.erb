@@ -5,13 +5,15 @@
   <%= csrf_meta_tag %>
   <title>SuperDevs</title>
   <%= stylesheet_link_tag "main" %>
+  <%= javascript_include_tag "lib/jquery-1.4.2.min", "lib/jquery.jgfeed-min", "twitter.js",
+                             "blog_feed.js" %>
 </head>
 
 <body>
 
-<div class="wrapper">
+<div id="wrapper">
 
-  <h1 class="logo">SuperDevs</h1>
+  <h1 id="logo">SuperDevs</h1>
   <p class="txt_right">Logged in as <strong>David Santoro</strong>  <span class="v_line"> | </span> <a href="#"> Logout</a></p>
 
   <!-- Navigation -->
@@ -34,7 +36,7 @@
   <div class="clear"></div>
 
 
-  <div class="content">
+  <div id="content">
     <%= yield %>
   </div>
 

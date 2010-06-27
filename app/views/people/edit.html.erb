@@ -9,29 +9,36 @@
 <!-- Personal Information -->
 <div class="in forms">
   <% form_for(@person) do |f| %>
+    <%= f.error_messages %>
     <h3 class="highlighter">Personal information</h3>
 
     <p>
       <label for="full_name">YOUR NAME (e.g. Martin Fowler)<br/>
-        <% f.text_field :full_name, :class => 'box' %>
+        <%= f.text_field :full_name, :class => 'box' %>
       </label>
     </p>
 
     <p>
       <label for="tagline">YOUR TAGLINE (e.g. Web evangelist)<br/>
-        <input type="text" name="tagline" class="box"/>
+        <%= f.text_field :tagline, :class => 'box' %>
       </label>
     </p>
 
     <p>
       <label for="bio">ABOUT YOU (Few words on your career, interests and passions)<br/>
-        <textarea name="bio" rows="5" cols="30" class="box"></textarea>
+        <%= f.text_area :bio, :class => 'box', :rows => 5, :cols => 30 %>
       </label>
     </p>
 
     <p>
       <label for="location">LOCATION (e.g. London, UK)<br/>
-        <input type="text" name="location" class="box"/>
+        <%= f.text_field :location, :class => 'box' %>
+      </label>
+    </p>
+
+    <p>
+      <label for="phone_number">PHONE NUMBER (e.g. +44 7757 809234)<br/>
+        <%= f.text_field :phone_number, :class => 'box' %>
       </label>
     </p>
 
@@ -39,19 +46,19 @@
 
     <p>
       <label for="company">CURRENT COMPANY (e.g. ThoughtWorks)<br/>
-        <input type="text" name="company" class="box"/>
+        <%= f.text_field :company, :class => 'box' %>
       </label>
     </p>
 
     <p>
       <label for="job_title">JOB TITLE (e.g. Ruby Developer)<br/>
-        <input type="text" name="job_title" class="box"/>
+        <%= f.text_field :job_title, :class => 'box' %>
       </label>
     </p>
 
     <p>
       <label for="interests">INTERESTS (e.g. C#, Ruby, TDD, Agile)<br/>
-        <input type="text" name="interests" class="box"/>
+        <%= f.text_field :interests, :class => 'box' %>
       </label>
     </p>
 
@@ -59,30 +66,42 @@
 
     <p>
       <label for="website">YOUR WEBSITE (e.g. http://www.martinfowler.com)<br/>
-        <input type="text" name="website" class="box"/>
+        <%= f.text_field :website, :class => 'box' %>
+      </label>
+    </p>
+
+    <p>
+      <label for="blog_feed">BLOG FEED<br/>
+        <%= f.text_field :blog_feed, :class => 'box' %>
       </label>
     </p>
 
     <p>
       <label for="twitter_username">TWITTER ACCOUNT (e.g. soulnafein)<br/>
-        <input type="text" name="twitter_username" class="box"/>
+        <%= f.text_field :twitter_username, :class => 'box' %>
       </label>
     </p>
 
     <p>
-      <label for="linkedin_account">LINKEDIN ACCOUNT (e.g. soulnafein@superdevs.com)<br/>
-        <input type="text" name="linkedin_account" class="box"/>
+      <label for="linkedin_profile">LINKEDIN PROFILE (e.g. http://uk.linkedin.com/in/davidsantoro)<br/>
+        <%= f.text_field :linkedin_profile, :class => 'box' %>
       </label>
     </p>
 
     <p>
       <label for="github_account">GITHUB ACCOUNT (e.g. soulnafein)<br/>
-        <input type="text" name="github_account" class="box"/>
+        <%= f.text_field :github_account, :class => 'box' %>
       </label>
     </p>
 
     <p>
-      <input name="submit" type="submit" id="submit" tabindex="5" class="com_btn" value="UPDATE"/>
+      <label for="email">EMAIL (e.g. soulnafein@superdevs.com)
+        <%= f.text_field :email, :class => 'box' %>
+      </label>
+    </p>
+
+    <p>
+      <%= f.submit "Update Profile", :class => 'com_btn' %>
     </p>
   <% end %>
 </div>

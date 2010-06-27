@@ -1,2 +1,84 @@
-<h1>People#show</h1>
-<p>Find me in app/views/people/show.html.erb</p>
+<script type="text/javascript" language="javascript">
+  $(document).ready(function() {
+    $("#tweets").twitter_feed("<%= @person.twitter_username %>");
+    $("#blog").blog_feed("<%= @person.blog_feed %>");
+  })
+</script>
+<div class="in">
+  <div id="profile">
+    <div id="profile_picture">
+      <%= raw(@person.profile_picture.to_html) %>
+    </div>
+    <h2><%= @person.full_name %></h2>
+
+    <h3><%= @person.tagline %></h3>
+    <% if not @person.company.empty? %>
+      <p>
+        I work for: <span class="highlighter"><%= @person.company %></span>
+      </p>
+    <% end %>
+    <% if not @person.location.empty? %>
+      <p>
+        I'm based in: <span class="highlighter"><%= @person.location %></span>
+      </p>
+    <% end %>
+  </div>
+  <div id="contacts">
+    <ul id="online_presence">
+      <% if not @person.twitter_username.empty? %>
+        <li>
+          <a href="http://www.twitter.com/<%= @person.twitter_username %>">
+            <img src="/images/twitter.png"/>
+          </a>
+        </li>
+      <% end %>
+      <% if not @person.linkedin_profile.empty? %>
+        <li>
+          <a href="<%= @person.linkedin_profile %>">
+            <img src="/images/linkedin.png"/>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+    <ul>
+      <li>email: <%= link_to @person.email, @person.email %></li>
+      <li>website: <%= link_to @person.website, @person.website %></li>
+      <li>phone: <%= @person.phone_number %></li>
+    </ul>
+    <% if not @person.interests.empty? %>
+      <ul id="interests">
+        <h5>Interests</h5>
+        <% @person.interests.split(",").each do |interest| %>
+          <li class="highlighter"><%= interest.strip %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+  <div style="clear:both"></div>
+</div>
+<div class="line"></div>
+<% if not @person.bio.empty? %>
+  <div class="in" id="bio">
+    <h4>Personal profile</h4>
+
+    <p><%= @person.bio %></p>
+  </div>
+  <div class="line"></div>
+<% end %>
+<div class="in" style="margin-top:0;">
+  <% if not @person.twitter_username.empty? %>
+    <div id="tweets">
+      <h4>Latest tweets</h4>
+      <ul>
+      </ul>
+    </div>
+  <% end %>
+  <div id="blog">
+    <h4>Blog entries</h4>
+    <dl style="float:left;">
+    </dl>
+    <div style="clear:both"></div>
+  </div>
+  <div style="clear:both"></div>
+</div>
+
