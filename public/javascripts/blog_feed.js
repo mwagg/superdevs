@@ -23,7 +23,7 @@
         var entry = entries[i];
         list.append(get_date_tag(new Date(entry.publishedDate)));
         var alternate_class = odd ? ' class="odd"' : '';
-        var title = '<a href="#"><h5>' + entry.title + '</h5></a>';
+        var title = '<a href="'+entry.link+'"><h5>' + entry.title + '</h5></a>';
         var snippet = '<p>'+entry.contentSnippet+'</p>';
         list.append('<dd><ul><li'+alternate_class+'>'+title+snippet+'</li></ul></dd>');
         odd = !odd;
