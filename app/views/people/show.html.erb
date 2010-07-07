@@ -41,12 +41,9 @@
       <% end %>
     </ul>
     <ul>
-      <% if not @person.website.empty? %>
-        <li>website: <%= link_to @person.website, @person.website %></li>
-      <% end %>
-      <% if not @person.website.empty? %>
-        <li>phone: <%= @person.phone_number %></li>
-      <% end %>
+      <li>email: <%= link_to @person.email, @person.email %></li>
+      <li>website: <%= link_to @person.website, @person.website %></li>
+      <li>phone: <%= @person.phone_number %></li>
     </ul>
     <% if not @person.interests.empty? %>
       <ul id="interests">
